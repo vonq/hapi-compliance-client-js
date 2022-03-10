@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ATS from './ATS';
-import Set from './Set';
 
 /**
  * The Company model module.
