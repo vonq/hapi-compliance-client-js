@@ -1,6 +1,6 @@
 {
   "name": "hapi_onboarding_api",
-  "version": "0.1",
+  "version": "v0.1",
   "description": "Simple_API_for_handling_employer_onboarding",
   "license": "BSD License",
   "main": "src/index.js",
