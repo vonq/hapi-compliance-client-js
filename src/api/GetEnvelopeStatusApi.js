@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 
 /**
@@ -20,24 +19,33 @@ import ApiClient from "../ApiClient";
 * @module api/GetEnvelopeStatusApi
 * @version v1
 */
-export default class GetEnvelopeStatusApi extends ApiClient {
+export default class GetEnvelopeStatusApi {
 
     /**
     * Constructs a new GetEnvelopeStatusApi. 
     * @alias module:api/GetEnvelopeStatusApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
 
     /**
-     * @param {String} envelopeId 
-     * @return {Promise}
+     * Callback function to receive the result of the getEnvelopeStatusRead operation.
+     * @callback module:api/GetEnvelopeStatusApi~getEnvelopeStatusReadCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    async getEnvelopeStatusRead(envelopeId) {
+
+    /**
+     * @param {String} envelopeId 
+     * @param {module:api/GetEnvelopeStatusApi~getEnvelopeStatusReadCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    getEnvelopeStatusRead(envelopeId, callback) {
       let postBody = null;
       // verify the required parameter 'envelopeId' is set
       if (envelopeId === undefined || envelopeId === null) {
@@ -50,7 +58,6 @@ export default class GetEnvelopeStatusApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -59,11 +66,10 @@ export default class GetEnvelopeStatusApi extends ApiClient {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/get_envelope_status/{envelope_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 

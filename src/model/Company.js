@@ -21,120 +21,12 @@ import ATS from './ATS';
  */
 class Company {
     /**
-     * @member {ATS} ats
-     * @type {ATS}
-     */
-    ats;
-    /**
-     * @member {String} ats_company_id
-     * @type {String}
-     */
-    ats_company_id;
-    /**
-     * @member {Object} ats_credentials
-     * @type {Object}
-     */
-    ats_credentials;
-    /**
-     * @member {String} career_site_url
-     * @type {String}
-     */
-    career_site_url;
-    /**
-     * @member {String} compliance_admin_point_of_contact
-     * @type {String}
-     */
-    compliance_admin_point_of_contact;
-    /**
-     * @member {String} contacts
-     * @type {String}
-     */
-    contacts;
-    /**
-     * @member {Date} created
-     * @type {Date}
-     */
-    created;
-    /**
-     * @member {Boolean} failed_audit_in_past_3_years
-     * @type {Boolean}
-     */
-    failed_audit_in_past_3_years;
-    /**
-     * @member {String} fein
-     * @type {String}
-     */
-    fein;
-    /**
-     * @member {String} hr_point_of_contact
-     * @type {String}
-     */
-    hr_point_of_contact;
-    /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {Boolean} is_under_conciliation_agreements_with_ofccp
-     * @type {Boolean}
-     */
-    is_under_conciliation_agreements_with_ofccp;
-    /**
-     * @member {String} is_valid
-     * @type {String}
-     */
-    is_valid;
-    /**
-     * @member {Date} modified
-     * @type {Date}
-     */
-    modified;
-    /**
-     * @member {String} name
-     * @type {String}
-     */
-    name;
-    /**
-     * @member {String} past_vendor
-     * @type {String}
-     */
-    past_vendor;
-    /**
-     * @member {String} postal_code
-     * @type {String}
-     */
-    postal_code;
-    /**
-     * @member {String} sein
-     * @type {String}
-     */
-    sein;
-    /**
-     * @member {Company.StatusEnum} status
-     * @type {Company.StatusEnum}
-     */
-    status;
-    /**
-     * @member {String} street_address
-     * @type {String}
-     */
-    street_address;
-    /**
-     * @member {String} uiid
-     * @type {String}
-     */
-    uiid;
-
-    
-
-    /**
      * Constructs a new <code>Company</code>.
      * @alias module:model/Company
-     * @param ats {ATS} 
+     * @param ats {module:model/ATS} 
      * @param atsCompanyId {String} 
      * @param atsCredentials {Object} 
-     * @param contacts {String} 
+     * @param contacts {Array.<String>} 
      * @param postalCode {String} 
      */
     constructor(ats, atsCompanyId, atsCredentials, contacts, postalCode) { 
@@ -232,7 +124,117 @@ class Company {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {module:model/ATS} ats
+ */
+Company.prototype['ats'] = undefined;
+
+/**
+ * @member {String} ats_company_id
+ */
+Company.prototype['ats_company_id'] = undefined;
+
+/**
+ * @member {Object} ats_credentials
+ */
+Company.prototype['ats_credentials'] = undefined;
+
+/**
+ * @member {String} career_site_url
+ */
+Company.prototype['career_site_url'] = undefined;
+
+/**
+ * @member {String} compliance_admin_point_of_contact
+ */
+Company.prototype['compliance_admin_point_of_contact'] = undefined;
+
+/**
+ * @member {Array.<String>} contacts
+ */
+Company.prototype['contacts'] = undefined;
+
+/**
+ * @member {Date} created
+ */
+Company.prototype['created'] = undefined;
+
+/**
+ * @member {Boolean} failed_audit_in_past_3_years
+ */
+Company.prototype['failed_audit_in_past_3_years'] = undefined;
+
+/**
+ * @member {String} fein
+ */
+Company.prototype['fein'] = undefined;
+
+/**
+ * @member {String} hr_point_of_contact
+ */
+Company.prototype['hr_point_of_contact'] = undefined;
+
+/**
+ * @member {String} id
+ */
+Company.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} is_under_conciliation_agreements_with_ofccp
+ */
+Company.prototype['is_under_conciliation_agreements_with_ofccp'] = undefined;
+
+/**
+ * @member {String} is_valid
+ */
+Company.prototype['is_valid'] = undefined;
+
+/**
+ * @member {Date} modified
+ */
+Company.prototype['modified'] = undefined;
+
+/**
+ * @member {String} name
+ */
+Company.prototype['name'] = undefined;
+
+/**
+ * @member {String} past_vendor
+ */
+Company.prototype['past_vendor'] = undefined;
+
+/**
+ * @member {String} postal_code
+ */
+Company.prototype['postal_code'] = undefined;
+
+/**
+ * @member {String} sein
+ */
+Company.prototype['sein'] = undefined;
+
+/**
+ * @member {module:model/Company.StatusEnum} status
+ */
+Company.prototype['status'] = undefined;
+
+/**
+ * @member {String} street_address
+ */
+Company.prototype['street_address'] = undefined;
+
+/**
+ * @member {String} uiid
+ */
+Company.prototype['uiid'] = undefined;
+
+
+
 
 
 /**

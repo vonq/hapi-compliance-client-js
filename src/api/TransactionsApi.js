@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 import Transaction from '../model/Transaction';
 
@@ -21,24 +20,34 @@ import Transaction from '../model/Transaction';
 * @module api/TransactionsApi
 * @version v1
 */
-export default class TransactionsApi extends ApiClient {
+export default class TransactionsApi {
 
     /**
     * Constructs a new TransactionsApi. 
     * @alias module:api/TransactionsApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
 
     /**
-     * @param {Transaction} data 
-     * @return {Promise<Transaction>}
+     * Callback function to receive the result of the transactionsCreate operation.
+     * @callback module:api/TransactionsApi~transactionsCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Transaction} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async transactionsCreate(data) {
+
+    /**
+     * @param {module:model/Transaction} data 
+     * @param {module:api/TransactionsApi~transactionsCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Transaction}
+     */
+    transactionsCreate(data, callback) {
       let postBody = data;
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
@@ -50,7 +59,6 @@ export default class TransactionsApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -59,19 +67,27 @@ export default class TransactionsApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Transaction;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/transactions/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} transactionId 
-     * @return {Promise<Transaction>}
+     * Callback function to receive the result of the transactionsRead operation.
+     * @callback module:api/TransactionsApi~transactionsReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Transaction} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async transactionsRead(transactionId) {
+
+    /**
+     * @param {String} transactionId 
+     * @param {module:api/TransactionsApi~transactionsReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Transaction}
+     */
+    transactionsRead(transactionId, callback) {
       let postBody = null;
       // verify the required parameter 'transactionId' is set
       if (transactionId === undefined || transactionId === null) {
@@ -84,7 +100,6 @@ export default class TransactionsApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -93,11 +108,10 @@ export default class TransactionsApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Transaction;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/transactions/{transaction_id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 

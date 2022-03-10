@@ -20,29 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class BoardPublic {
     /**
-     * @member {String} name
-     * @type {String}
-     */
-    name;
-    /**
-     * @member {String} code
-     * @type {String}
-     */
-    code;
-    /**
-     * @member {String} state
-     * @type {String}
-     */
-    state;
-    /**
-     * @member {String} credentials_schema
-     * @type {String}
-     */
-    credentials_schema;
-
-    
-
-    /**
      * Constructs a new <code>BoardPublic</code>.
      * @alias module:model/BoardPublic
      * @param name {String} 
@@ -87,7 +64,32 @@ class BoardPublic {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} name
+ */
+BoardPublic.prototype['name'] = undefined;
+
+/**
+ * @member {String} code
+ */
+BoardPublic.prototype['code'] = undefined;
+
+/**
+ * @member {String} state
+ */
+BoardPublic.prototype['state'] = undefined;
+
+/**
+ * @member {String} credentials_schema
+ */
+BoardPublic.prototype['credentials_schema'] = undefined;
+
+
+
 
 
 

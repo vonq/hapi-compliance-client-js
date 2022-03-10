@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 import Vacancy from '../model/Vacancy';
 
@@ -21,24 +20,34 @@ import Vacancy from '../model/Vacancy';
 * @module api/VacanciesApi
 * @version v1
 */
-export default class VacanciesApi extends ApiClient {
+export default class VacanciesApi {
 
     /**
     * Constructs a new VacanciesApi. 
     * @alias module:api/VacanciesApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
 
     /**
-     * @param {String} companyId 
-     * @return {Promise<Array.<Vacancy>>}
+     * Callback function to receive the result of the vacanciesList operation.
+     * @callback module:api/VacanciesApi~vacanciesListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Vacancy>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async vacanciesList(companyId) {
+
+    /**
+     * @param {String} companyId 
+     * @param {module:api/VacanciesApi~vacanciesListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Vacancy>}
+     */
+    vacanciesList(companyId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -51,7 +60,6 @@ export default class VacanciesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -60,20 +68,28 @@ export default class VacanciesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Vacancy];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/vacancies/{company_id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the vacanciesRead operation.
+     * @callback module:api/VacanciesApi~vacanciesReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vacancy} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @return {Promise<Vacancy>}
+     * @param {module:api/VacanciesApi~vacanciesReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vacancy}
      */
-    async vacanciesRead(companyId, id) {
+    vacanciesRead(companyId, id, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -91,7 +107,6 @@ export default class VacanciesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -100,11 +115,10 @@ export default class VacanciesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Vacancy;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/vacancies/{company_id}/{id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 

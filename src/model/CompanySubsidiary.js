@@ -20,104 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class CompanySubsidiary {
     /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {Boolean} valid
-     * @type {Boolean}
-     */
-    valid;
-    /**
-     * @member {Date} created
-     * @type {Date}
-     */
-    created;
-    /**
-     * @member {Date} modified
-     * @type {Date}
-     */
-    modified;
-    /**
-     * @member {String} ats_company_id
-     * @type {String}
-     */
-    ats_company_id;
-    /**
-     * @member {Object} ats_credentials
-     * @type {Object}
-     */
-    ats_credentials;
-    /**
-     * @member {String} name
-     * @type {String}
-     */
-    name;
-    /**
-     * @member {String} street_address
-     * @type {String}
-     */
-    street_address;
-    /**
-     * @member {String} postal_code
-     * @type {String}
-     */
-    postal_code;
-    /**
-     * @member {String} career_site_url
-     * @type {String}
-     */
-    career_site_url;
-    /**
-     * @member {String} fein
-     * @type {String}
-     */
-    fein;
-    /**
-     * @member {String} sein
-     * @type {String}
-     */
-    sein;
-    /**
-     * @member {String} uiid
-     * @type {String}
-     */
-    uiid;
-    /**
-     * @member {CompanySubsidiary.StatusEnum} status
-     * @type {CompanySubsidiary.StatusEnum}
-     */
-    status;
-    /**
-     * @member {String} letter_of_auth_docusign_envelope
-     * @type {String}
-     */
-    letter_of_auth_docusign_envelope;
-    /**
-     * @member {String} ats
-     * @type {String}
-     */
-    ats;
-    /**
-     * @member {String} hr_point_of_contact
-     * @type {String}
-     */
-    hr_point_of_contact;
-    /**
-     * @member {String} compliance_admin_point_of_contact
-     * @type {String}
-     */
-    compliance_admin_point_of_contact;
-    /**
-     * @member {String} company
-     * @type {String}
-     */
-    company;
-
-    
-
-    /**
      * Constructs a new <code>CompanySubsidiary</code>.
      * @alias module:model/CompanySubsidiary
      * @param atsCompanyId {String} 
@@ -209,7 +111,107 @@ class CompanySubsidiary {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} id
+ */
+CompanySubsidiary.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} valid
+ */
+CompanySubsidiary.prototype['valid'] = undefined;
+
+/**
+ * @member {Date} created
+ */
+CompanySubsidiary.prototype['created'] = undefined;
+
+/**
+ * @member {Date} modified
+ */
+CompanySubsidiary.prototype['modified'] = undefined;
+
+/**
+ * @member {String} ats_company_id
+ */
+CompanySubsidiary.prototype['ats_company_id'] = undefined;
+
+/**
+ * @member {Object} ats_credentials
+ */
+CompanySubsidiary.prototype['ats_credentials'] = undefined;
+
+/**
+ * @member {String} name
+ */
+CompanySubsidiary.prototype['name'] = undefined;
+
+/**
+ * @member {String} street_address
+ */
+CompanySubsidiary.prototype['street_address'] = undefined;
+
+/**
+ * @member {String} postal_code
+ */
+CompanySubsidiary.prototype['postal_code'] = undefined;
+
+/**
+ * @member {String} career_site_url
+ */
+CompanySubsidiary.prototype['career_site_url'] = undefined;
+
+/**
+ * @member {String} fein
+ */
+CompanySubsidiary.prototype['fein'] = undefined;
+
+/**
+ * @member {String} sein
+ */
+CompanySubsidiary.prototype['sein'] = undefined;
+
+/**
+ * @member {String} uiid
+ */
+CompanySubsidiary.prototype['uiid'] = undefined;
+
+/**
+ * @member {module:model/CompanySubsidiary.StatusEnum} status
+ */
+CompanySubsidiary.prototype['status'] = undefined;
+
+/**
+ * @member {String} letter_of_auth_docusign_envelope
+ */
+CompanySubsidiary.prototype['letter_of_auth_docusign_envelope'] = undefined;
+
+/**
+ * @member {String} ats
+ */
+CompanySubsidiary.prototype['ats'] = undefined;
+
+/**
+ * @member {String} hr_point_of_contact
+ */
+CompanySubsidiary.prototype['hr_point_of_contact'] = undefined;
+
+/**
+ * @member {String} compliance_admin_point_of_contact
+ */
+CompanySubsidiary.prototype['compliance_admin_point_of_contact'] = undefined;
+
+/**
+ * @member {String} company
+ */
+CompanySubsidiary.prototype['company'] = undefined;
+
+
+
 
 
 /**

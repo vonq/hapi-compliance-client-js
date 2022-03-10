@@ -11,34 +11,43 @@
  *
  */
 
-// CommonJS-like environments that support module.exports, like Node.
-factory(require('expect.js'), require(process.cwd()+'/src/index'));
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.HapiOnboardingApi);
+  }
+}(this, function(expect, HapiOnboardingApi) {
+  'use strict';
 
-'use strict';
+  var instance;
 
-var instance;
+  beforeEach(function() {
+    instance = new HapiOnboardingApi.TransactionsApi();
+  });
 
-beforeEach(function() {
-  instance = new HapiOnboardingApi.TransactionsApi();
-});
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-var getProperty = function(object, getter, property) {
-  // Use getter method if present; otherwise, get the property directly.
-  if (typeof object[getter] === 'function')
-    return object[getter]();
-  else
-    return object[property];
-}
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
-var setProperty = function(object, setter, property, value) {
-  // Use setter method if present; otherwise, set the property directly.
-  if (typeof object[setter] === 'function')
-    object[setter](value);
-  else
-    object[property] = value;
-}
-
-describe('TransactionsApi', function() {
+  describe('TransactionsApi', function() {
     describe('transactionsCreate', function() {
       it('should call transactionsCreate successfully', function(done) {
         //uncomment below and update the code to test transactionsCreate
@@ -59,4 +68,6 @@ describe('TransactionsApi', function() {
         done();
       });
     });
-});
+  });
+
+}));

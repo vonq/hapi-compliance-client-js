@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 import BoardContract from '../model/BoardContract';
 import Company from '../model/Company';
@@ -24,25 +23,35 @@ import PointOfContact from '../model/PointOfContact';
 * @module api/CompaniesApi
 * @version v1
 */
-export default class CompaniesApi extends ApiClient {
+export default class CompaniesApi {
 
     /**
     * Constructs a new CompaniesApi. 
     * @alias module:api/CompaniesApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
 
     /**
-     * @param {String} companyId 
-     * @param {PointOfContact} data 
-     * @return {Promise<PointOfContact>}
+     * Callback function to receive the result of the companiesContactsCreate operation.
+     * @callback module:api/CompaniesApi~companiesContactsCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PointOfContact} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesContactsCreate(companyId, data) {
+
+    /**
+     * @param {String} companyId 
+     * @param {module:model/PointOfContact} data 
+     * @param {module:api/CompaniesApi~companiesContactsCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PointOfContact}
+     */
+    companiesContactsCreate(companyId, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -59,7 +68,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -68,20 +76,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PointOfContact;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesContactsDelete operation.
+     * @callback module:api/CompaniesApi~companiesContactsDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @return {Promise}
+     * @param {module:api/CompaniesApi~companiesContactsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    async companiesContactsDelete(companyId, id) {
+    companiesContactsDelete(companyId, id, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -99,7 +114,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -108,19 +122,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/{id}/', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} companyId 
-     * @return {Promise<Array.<PointOfContact>>}
+     * Callback function to receive the result of the companiesContactsList operation.
+     * @callback module:api/CompaniesApi~companiesContactsListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/PointOfContact>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesContactsList(companyId) {
+
+    /**
+     * @param {String} companyId 
+     * @param {module:api/CompaniesApi~companiesContactsListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/PointOfContact>}
+     */
+    companiesContactsList(companyId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -133,7 +155,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -142,21 +163,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [PointOfContact];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesContactsPartialUpdate operation.
+     * @callback module:api/CompaniesApi~companiesContactsPartialUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PointOfContact} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @param {PointOfContact} data 
-     * @return {Promise<PointOfContact>}
+     * @param {module:model/PointOfContact} data 
+     * @param {module:api/CompaniesApi~companiesContactsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PointOfContact}
      */
-    async companiesContactsPartialUpdate(companyId, id, data) {
+    companiesContactsPartialUpdate(companyId, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -178,7 +207,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -187,20 +215,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PointOfContact;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/{id}/', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesContactsRead operation.
+     * @callback module:api/CompaniesApi~companiesContactsReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PointOfContact} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @return {Promise<PointOfContact>}
+     * @param {module:api/CompaniesApi~companiesContactsReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PointOfContact}
      */
-    async companiesContactsRead(companyId, id) {
+    companiesContactsRead(companyId, id, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -218,7 +254,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -227,21 +262,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PointOfContact;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/{id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesContactsUpdate operation.
+     * @callback module:api/CompaniesApi~companiesContactsUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PointOfContact} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @param {PointOfContact} data 
-     * @return {Promise<PointOfContact>}
+     * @param {module:model/PointOfContact} data 
+     * @param {module:api/CompaniesApi~companiesContactsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PointOfContact}
      */
-    async companiesContactsUpdate(companyId, id, data) {
+    companiesContactsUpdate(companyId, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -263,7 +306,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -272,19 +314,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PointOfContact;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/contacts/{id}/', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {Company} data 
-     * @return {Promise<Company>}
+     * Callback function to receive the result of the companiesCreate operation.
+     * @callback module:api/CompaniesApi~companiesCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Company} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesCreate(data) {
+
+    /**
+     * @param {module:model/Company} data 
+     * @param {module:api/CompaniesApi~companiesCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Company}
+     */
+    companiesCreate(data, callback) {
       let postBody = data;
       // verify the required parameter 'data' is set
       if (data === undefined || data === null) {
@@ -296,7 +346,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -305,19 +354,26 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Company;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} id 
-     * @return {Promise}
+     * Callback function to receive the result of the companiesDelete operation.
+     * @callback module:api/CompaniesApi~companiesDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesDelete(id) {
+
+    /**
+     * @param {String} id 
+     * @param {module:api/CompaniesApi~companiesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    companiesDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -330,7 +386,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -339,18 +394,26 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{id}/', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @return {Promise<Array.<Company>>}
+     * Callback function to receive the result of the companiesList operation.
+     * @callback module:api/CompaniesApi~companiesListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Company>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesList() {
+
+    /**
+     * @param {module:api/CompaniesApi~companiesListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Company>}
+     */
+    companiesList(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -358,7 +421,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -367,20 +429,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Company];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} id 
-     * @param {Company} data 
-     * @return {Promise<Company>}
+     * Callback function to receive the result of the companiesPartialUpdate operation.
+     * @callback module:api/CompaniesApi~companiesPartialUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Company} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesPartialUpdate(id, data) {
+
+    /**
+     * @param {String} id 
+     * @param {module:model/Company} data 
+     * @param {module:api/CompaniesApi~companiesPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Company}
+     */
+    companiesPartialUpdate(id, data, callback) {
       let postBody = data;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -397,7 +467,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -406,19 +475,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Company;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{id}/', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} id 
-     * @return {Promise<Company>}
+     * Callback function to receive the result of the companiesRead operation.
+     * @callback module:api/CompaniesApi~companiesReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Company} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesRead(id) {
+
+    /**
+     * @param {String} id 
+     * @param {module:api/CompaniesApi~companiesReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Company}
+     */
+    companiesRead(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -431,7 +508,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -440,21 +516,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Company;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsCreate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BoardContract} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} subsidiaryId 
-     * @param {BoardContract} data 
-     * @return {Promise<BoardContract>}
+     * @param {module:model/BoardContract} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BoardContract}
      */
-    async companiesSubsidiariesBoardsCreate(companyId, subsidiaryId, data) {
+    companiesSubsidiariesBoardsCreate(companyId, subsidiaryId, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -476,7 +560,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -485,21 +568,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BoardContract;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsDelete operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * @param {String} companyId 
      * @param {String} id 
      * @param {String} subsidiaryId 
-     * @return {Promise}
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    async companiesSubsidiariesBoardsDelete(companyId, id, subsidiaryId) {
+    companiesSubsidiariesBoardsDelete(companyId, id, subsidiaryId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -522,7 +612,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -531,20 +620,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/{id}/', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsList operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/BoardContract>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} subsidiaryId 
-     * @return {Promise<Array.<BoardContract>>}
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/BoardContract>}
      */
-    async companiesSubsidiariesBoardsList(companyId, subsidiaryId) {
+    companiesSubsidiariesBoardsList(companyId, subsidiaryId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -562,7 +659,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -571,22 +667,30 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [BoardContract];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsPartialUpdate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsPartialUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BoardContract} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * @param {String} companyId 
      * @param {String} id 
      * @param {String} subsidiaryId 
-     * @param {BoardContract} data 
-     * @return {Promise<BoardContract>}
+     * @param {module:model/BoardContract} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BoardContract}
      */
-    async companiesSubsidiariesBoardsPartialUpdate(companyId, id, subsidiaryId, data) {
+    companiesSubsidiariesBoardsPartialUpdate(companyId, id, subsidiaryId, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -613,7 +717,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -622,21 +725,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BoardContract;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/{id}/', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsRead operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BoardContract} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * @param {String} companyId 
      * @param {String} id 
      * @param {String} subsidiaryId 
-     * @return {Promise<BoardContract>}
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BoardContract}
      */
-    async companiesSubsidiariesBoardsRead(companyId, id, subsidiaryId) {
+    companiesSubsidiariesBoardsRead(companyId, id, subsidiaryId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -659,7 +770,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -668,22 +778,30 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = BoardContract;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/{id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the companiesSubsidiariesBoardsUpdate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesBoardsUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BoardContract} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * @param {String} companyId 
      * @param {String} id 
      * @param {String} subsidiaryId 
-     * @param {BoardContract} data 
-     * @return {Promise<BoardContract>}
+     * @param {module:model/BoardContract} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesBoardsUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BoardContract}
      */
-    async companiesSubsidiariesBoardsUpdate(companyId, id, subsidiaryId, data) {
+    companiesSubsidiariesBoardsUpdate(companyId, id, subsidiaryId, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -710,7 +828,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -719,20 +836,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BoardContract;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{subsidiary_id}/boards/{id}/', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} companyId 
-     * @param {CompanySubsidiary} data 
-     * @return {Promise<CompanySubsidiary>}
+     * Callback function to receive the result of the companiesSubsidiariesCreate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CompanySubsidiary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesSubsidiariesCreate(companyId, data) {
+
+    /**
+     * @param {String} companyId 
+     * @param {module:model/CompanySubsidiary} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CompanySubsidiary}
+     */
+    companiesSubsidiariesCreate(companyId, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -749,7 +874,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -758,20 +882,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CompanySubsidiary;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesDelete operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @return {Promise}
+     * @param {module:api/CompaniesApi~companiesSubsidiariesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    async companiesSubsidiariesDelete(companyId, id) {
+    companiesSubsidiariesDelete(companyId, id, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -789,7 +920,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -798,19 +928,27 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{id}/', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} companyId 
-     * @return {Promise<Array.<CompanySubsidiary>>}
+     * Callback function to receive the result of the companiesSubsidiariesList operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CompanySubsidiary>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesSubsidiariesList(companyId) {
+
+    /**
+     * @param {String} companyId 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CompanySubsidiary>}
+     */
+    companiesSubsidiariesList(companyId, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -823,7 +961,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -832,21 +969,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [CompanySubsidiary];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesPartialUpdate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesPartialUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CompanySubsidiary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @param {CompanySubsidiary} data 
-     * @return {Promise<CompanySubsidiary>}
+     * @param {module:model/CompanySubsidiary} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesPartialUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CompanySubsidiary}
      */
-    async companiesSubsidiariesPartialUpdate(companyId, id, data) {
+    companiesSubsidiariesPartialUpdate(companyId, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -868,7 +1013,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -877,20 +1021,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CompanySubsidiary;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{id}/', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesRead operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesReadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CompanySubsidiary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @return {Promise<CompanySubsidiary>}
+     * @param {module:api/CompaniesApi~companiesSubsidiariesReadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CompanySubsidiary}
      */
-    async companiesSubsidiariesRead(companyId, id) {
+    companiesSubsidiariesRead(companyId, id, callback) {
       let postBody = null;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -908,7 +1060,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -917,21 +1068,29 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CompanySubsidiary;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{id}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the companiesSubsidiariesUpdate operation.
+     * @callback module:api/CompaniesApi~companiesSubsidiariesUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CompanySubsidiary} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * @param {String} companyId 
      * @param {String} id 
-     * @param {CompanySubsidiary} data 
-     * @return {Promise<CompanySubsidiary>}
+     * @param {module:model/CompanySubsidiary} data 
+     * @param {module:api/CompaniesApi~companiesSubsidiariesUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CompanySubsidiary}
      */
-    async companiesSubsidiariesUpdate(companyId, id, data) {
+    companiesSubsidiariesUpdate(companyId, id, data, callback) {
       let postBody = data;
       // verify the required parameter 'companyId' is set
       if (companyId === undefined || companyId === null) {
@@ -953,7 +1112,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -962,20 +1120,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CompanySubsidiary;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{company_id}/subsidiaries/{id}/', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * @param {String} id 
-     * @param {Company} data 
-     * @return {Promise<Company>}
+     * Callback function to receive the result of the companiesUpdate operation.
+     * @callback module:api/CompaniesApi~companiesUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Company} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async companiesUpdate(id, data) {
+
+    /**
+     * @param {String} id 
+     * @param {module:model/Company} data 
+     * @param {module:api/CompaniesApi~companiesUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Company}
+     */
+    companiesUpdate(id, data, callback) {
       let postBody = data;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -992,7 +1158,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -1001,21 +1166,28 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Company;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{id}/', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
+     * Callback function to receive the result of the submitForReview operation.
+     * @callback module:api/CompaniesApi~submitForReviewCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
      * This endpoint submits for review a company with all details filled.
      * @param {String} id 
-     * @param {Company} data 
-     * @return {Promise}
+     * @param {module:model/Company} data 
+     * @param {module:api/CompaniesApi~submitForReviewCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    async submitForReview(id, data) {
+    submitForReview(id, data, callback) {
       let postBody = data;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1032,7 +1204,6 @@ export default class CompaniesApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -1041,11 +1212,10 @@ export default class CompaniesApi extends ApiClient {
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/companies/{id}/submit/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 

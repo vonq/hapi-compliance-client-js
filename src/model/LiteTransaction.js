@@ -20,39 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class LiteTransaction {
     /**
-     * @member {String} transaction_id
-     * @type {String}
-     */
-    transaction_id;
-    /**
-     * @member {LiteTransaction.TransactionTypeEnum} transaction_type
-     * @type {LiteTransaction.TransactionTypeEnum}
-     */
-    transaction_type;
-    /**
-     * @member {Date} transaction_timestamp
-     * @type {Date}
-     */
-    transaction_timestamp;
-    /**
-     * @member {LiteTransaction.DistributionTypeEnum} distribution_type
-     * @type {LiteTransaction.DistributionTypeEnum}
-     */
-    distribution_type;
-    /**
-     * @member {String} channel
-     * @type {String}
-     */
-    channel;
-    /**
-     * @member {String} confirmation_id
-     * @type {String}
-     */
-    confirmation_id;
-
-    
-
-    /**
      * Constructs a new <code>LiteTransaction</code>.
      * @alias module:model/LiteTransaction
      * @param transactionId {String} 
@@ -103,7 +70,42 @@ class LiteTransaction {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} transaction_id
+ */
+LiteTransaction.prototype['transaction_id'] = undefined;
+
+/**
+ * @member {module:model/LiteTransaction.TransactionTypeEnum} transaction_type
+ */
+LiteTransaction.prototype['transaction_type'] = undefined;
+
+/**
+ * @member {Date} transaction_timestamp
+ */
+LiteTransaction.prototype['transaction_timestamp'] = undefined;
+
+/**
+ * @member {module:model/LiteTransaction.DistributionTypeEnum} distribution_type
+ */
+LiteTransaction.prototype['distribution_type'] = undefined;
+
+/**
+ * @member {String} channel
+ */
+LiteTransaction.prototype['channel'] = undefined;
+
+/**
+ * @member {String} confirmation_id
+ */
+LiteTransaction.prototype['confirmation_id'] = undefined;
+
+
+
 
 
 /**

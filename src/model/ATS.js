@@ -20,19 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class ATS {
     /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {String} name
-     * @type {String}
-     */
-    name;
-
-    
-
-    /**
      * Constructs a new <code>ATS</code>.
      * @alias module:model/ATS
      */
@@ -69,7 +56,22 @@ class ATS {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} id
+ */
+ATS.prototype['id'] = undefined;
+
+/**
+ * @member {String} name
+ */
+ATS.prototype['name'] = undefined;
+
+
+
 
 
 

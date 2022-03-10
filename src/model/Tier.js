@@ -20,46 +20,13 @@ import ApiClient from '../ApiClient';
  */
 class Tier {
     /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {String} name
-     * @type {String}
-     */
-    name;
-    /**
-     * @member {Number} maximum_vacancies_per_year
-     * @type {Number}
-     */
-    maximum_vacancies_per_year;
-    /**
-     * @member {Number} deactivation_limit
-     * @type {Number}
-     */
-    deactivation_limit;
-    /**
-     * @member {String} vonq_price
-     * @type {String}
-     */
-    vonq_price;
-    /**
-     * @member {String} rate_card_price
-     * @type {String}
-     */
-    rate_card_price;
-
-    
-
-    /**
      * Constructs a new <code>Tier</code>.
      * @alias module:model/Tier
      * @param name {String} 
      * @param maximumVacanciesPerYear {Number} Tier's maximum jobs per year published
      * @param deactivationLimit {Number} Maximum number of jobs before the subscription is deactivated
-     * @param vonqPrice {String} Price per entity per year in dollars(ex. VAT), as invoiced to the ATS by VONQ
-     * @param rateCardPrice {String} Proposed rate card price per entity per year in dollars (ex. VAT), as invoiced to the employer by the ATS
+     * @param vonqPrice {Number} Price per entity per year in dollars(ex. VAT), as invoiced to the ATS by VONQ
+     * @param rateCardPrice {Number} Proposed rate card price per entity per year in dollars (ex. VAT), as invoiced to the employer by the ATS
      */
     constructor(name, maximumVacanciesPerYear, deactivationLimit, vonqPrice, rateCardPrice) { 
         
@@ -103,15 +70,54 @@ class Tier {
                 obj['deactivation_limit'] = ApiClient.convertToType(data['deactivation_limit'], 'Number');
             }
             if (data.hasOwnProperty('vonq_price')) {
-                obj['vonq_price'] = ApiClient.convertToType(data['vonq_price'], 'String');
+                obj['vonq_price'] = ApiClient.convertToType(data['vonq_price'], 'Number');
             }
             if (data.hasOwnProperty('rate_card_price')) {
-                obj['rate_card_price'] = ApiClient.convertToType(data['rate_card_price'], 'String');
+                obj['rate_card_price'] = ApiClient.convertToType(data['rate_card_price'], 'Number');
             }
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} id
+ */
+Tier.prototype['id'] = undefined;
+
+/**
+ * @member {String} name
+ */
+Tier.prototype['name'] = undefined;
+
+/**
+ * Tier's maximum jobs per year published
+ * @member {Number} maximum_vacancies_per_year
+ */
+Tier.prototype['maximum_vacancies_per_year'] = undefined;
+
+/**
+ * Maximum number of jobs before the subscription is deactivated
+ * @member {Number} deactivation_limit
+ */
+Tier.prototype['deactivation_limit'] = undefined;
+
+/**
+ * Price per entity per year in dollars(ex. VAT), as invoiced to the ATS by VONQ
+ * @member {Number} vonq_price
+ */
+Tier.prototype['vonq_price'] = undefined;
+
+/**
+ * Proposed rate card price per entity per year in dollars (ex. VAT), as invoiced to the employer by the ATS
+ * @member {Number} rate_card_price
+ */
+Tier.prototype['rate_card_price'] = undefined;
+
+
+
 
 
 

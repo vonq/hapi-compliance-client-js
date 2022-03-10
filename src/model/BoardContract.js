@@ -20,59 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class BoardContract {
     /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {String} jobboard_code
-     * @type {String}
-     */
-    jobboard_code;
-    /**
-     * @member {Boolean} is_valid
-     * @type {Boolean}
-     */
-    is_valid;
-    /**
-     * @member {Date} created
-     * @type {Date}
-     */
-    created;
-    /**
-     * @member {Date} modified
-     * @type {Date}
-     */
-    modified;
-    /**
-     * @member {BoardContract.StatusEnum} status
-     * @type {BoardContract.StatusEnum}
-     */
-    status;
-    /**
-     * @member {BoardContract.StateEnum} state
-     * @type {BoardContract.StateEnum}
-     */
-    state;
-    /**
-     * @member {Object} credentials
-     * @type {Object}
-     */
-    credentials;
-    /**
-     * @member {String} company_subsidiary
-     * @type {String}
-     */
-    company_subsidiary;
-    /**
-     * @member {String} company
-     * @type {String}
-     */
-    company;
-
-    
-
-    /**
      * Constructs a new <code>BoardContract</code>.
      * @alias module:model/BoardContract
      * @param jobboardCode {String} 
@@ -135,7 +82,62 @@ class BoardContract {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} id
+ */
+BoardContract.prototype['id'] = undefined;
+
+/**
+ * @member {String} jobboard_code
+ */
+BoardContract.prototype['jobboard_code'] = undefined;
+
+/**
+ * @member {Boolean} is_valid
+ */
+BoardContract.prototype['is_valid'] = undefined;
+
+/**
+ * @member {Date} created
+ */
+BoardContract.prototype['created'] = undefined;
+
+/**
+ * @member {Date} modified
+ */
+BoardContract.prototype['modified'] = undefined;
+
+/**
+ * @member {module:model/BoardContract.StatusEnum} status
+ */
+BoardContract.prototype['status'] = undefined;
+
+/**
+ * @member {module:model/BoardContract.StateEnum} state
+ */
+BoardContract.prototype['state'] = undefined;
+
+/**
+ * @member {Object} credentials
+ */
+BoardContract.prototype['credentials'] = undefined;
+
+/**
+ * @member {String} company_subsidiary
+ */
+BoardContract.prototype['company_subsidiary'] = undefined;
+
+/**
+ * @member {String} company
+ */
+BoardContract.prototype['company'] = undefined;
+
+
+
 
 
 /**

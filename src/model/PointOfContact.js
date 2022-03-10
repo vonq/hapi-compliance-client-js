@@ -20,66 +20,9 @@ import ApiClient from '../ApiClient';
  */
 class PointOfContact {
     /**
-     * @member {Array.<CodegenProperty{openApiType='string', baseName='companies', complexType='null', getter='getCompanies', setter='setCompanies', description='null', dataType='String', datatypeWithEnum='String', dataFormat='null', name='companies', min='null', max='null', defaultValue='null', defaultValueWithParam=' = ApiClient.convertToType(data['companies'], 'String');', baseType='String', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "type" : "string",
-  "nullable" : true
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=true, isModel=false, isContainer=false, isString=true, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=true, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Companies', nameInSnakeCase='COMPANIES', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>} companies
-     * @type {Array.<CodegenProperty{openApiType='string', baseName='companies', complexType='null', getter='getCompanies', setter='setCompanies', description='null', dataType='String', datatypeWithEnum='String', dataFormat='null', name='companies', min='null', max='null', defaultValue='null', defaultValueWithParam=' = ApiClient.convertToType(data['companies'], 'String');', baseType='String', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "type" : "string",
-  "nullable" : true
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=true, isModel=false, isContainer=false, isString=true, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=true, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Companies', nameInSnakeCase='COMPANIES', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>}
-     */
-    companies;
-    /**
-     * @member {Date} created
-     * @type {Date}
-     */
-    created;
-    /**
-     * @member {String} email_address
-     * @type {String}
-     */
-    email_address;
-    /**
-     * @member {String} full_name
-     * @type {String}
-     */
-    full_name;
-    /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {Boolean} is_valid
-     * @type {Boolean}
-     */
-    is_valid;
-    /**
-     * @member {String} job_title
-     * @type {String}
-     */
-    job_title;
-    /**
-     * @member {Date} modified
-     * @type {Date}
-     */
-    modified;
-    /**
-     * @member {String} phone_number
-     * @type {String}
-     */
-    phone_number;
-
-    
-
-    /**
      * Constructs a new <code>PointOfContact</code>.
      * @alias module:model/PointOfContact
-     * @param companies {Array.<CodegenProperty{openApiType='string', baseName='companies', complexType='null', getter='getCompanies', setter='setCompanies', description='null', dataType='String', datatypeWithEnum='String', dataFormat='null', name='companies', min='null', max='null', defaultValue='null', defaultValueWithParam=' = ApiClient.convertToType(data['companies'], 'String');', baseType='String', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "type" : "string",
-  "nullable" : true
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=true, isModel=false, isContainer=false, isString=true, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=true, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Companies', nameInSnakeCase='COMPANIES', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>} 
+     * @param companies {Array.<String>} 
      */
     constructor(companies) { 
         
@@ -136,7 +79,57 @@ class PointOfContact {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {Array.<String>} companies
+ */
+PointOfContact.prototype['companies'] = undefined;
+
+/**
+ * @member {Date} created
+ */
+PointOfContact.prototype['created'] = undefined;
+
+/**
+ * @member {String} email_address
+ */
+PointOfContact.prototype['email_address'] = undefined;
+
+/**
+ * @member {String} full_name
+ */
+PointOfContact.prototype['full_name'] = undefined;
+
+/**
+ * @member {String} id
+ */
+PointOfContact.prototype['id'] = undefined;
+
+/**
+ * @member {Boolean} is_valid
+ */
+PointOfContact.prototype['is_valid'] = undefined;
+
+/**
+ * @member {String} job_title
+ */
+PointOfContact.prototype['job_title'] = undefined;
+
+/**
+ * @member {Date} modified
+ */
+PointOfContact.prototype['modified'] = undefined;
+
+/**
+ * @member {String} phone_number
+ */
+PointOfContact.prototype['phone_number'] = undefined;
+
+
+
 
 
 

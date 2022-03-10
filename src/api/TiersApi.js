@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 import Tier from '../model/Tier';
 
@@ -21,23 +20,33 @@ import Tier from '../model/Tier';
 * @module api/TiersApi
 * @version v1
 */
-export default class TiersApi extends ApiClient {
+export default class TiersApi {
 
     /**
     * Constructs a new TiersApi. 
     * @alias module:api/TiersApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
 
     /**
-     * @return {Promise<Array.<Tier>>}
+     * Callback function to receive the result of the tiersList operation.
+     * @callback module:api/TiersApi~tiersListCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Tier>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    async tiersList() {
+
+    /**
+     * @param {module:api/TiersApi~tiersListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Tier>}
+     */
+    tiersList(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -45,7 +54,6 @@ export default class TiersApi extends ApiClient {
       let queryParams = {
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -54,11 +62,10 @@ export default class TiersApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Tier];
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/tiers/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 

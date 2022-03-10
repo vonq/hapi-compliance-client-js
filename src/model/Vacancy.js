@@ -21,63 +21,9 @@ import LiteTransaction from './LiteTransaction';
  */
 class Vacancy {
     /**
-     * @member {String} id
-     * @type {String}
-     */
-    id;
-    /**
-     * @member {Array.<CodegenProperty{openApiType='LiteTransaction', baseName='transactions', complexType='LiteTransaction', getter='getTransactions', setter='setTransactions', description='null', dataType='LiteTransaction', datatypeWithEnum='LiteTransaction', dataFormat='null', name='transactions', min='null', max='null', defaultValue='null', defaultValueWithParam=' = LiteTransaction.constructFromObject(data['transactions']);', baseType='LiteTransaction', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "$ref" : "#/components/schemas/LiteTransaction"
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=false, isModel=true, isContainer=false, isString=false, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=false, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Transactions', nameInSnakeCase='TRANSACTIONS', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>} transactions
-     * @type {Array.<CodegenProperty{openApiType='LiteTransaction', baseName='transactions', complexType='LiteTransaction', getter='getTransactions', setter='setTransactions', description='null', dataType='LiteTransaction', datatypeWithEnum='LiteTransaction', dataFormat='null', name='transactions', min='null', max='null', defaultValue='null', defaultValueWithParam=' = LiteTransaction.constructFromObject(data['transactions']);', baseType='LiteTransaction', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "$ref" : "#/components/schemas/LiteTransaction"
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=false, isModel=true, isContainer=false, isString=false, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=false, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Transactions', nameInSnakeCase='TRANSACTIONS', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>}
-     */
-    transactions;
-    /**
-     * @member {String} req_number
-     * @type {String}
-     */
-    req_number;
-    /**
-     * @member {String} company_name
-     * @type {String}
-     */
-    company_name;
-    /**
-     * @member {String} job_location
-     * @type {String}
-     */
-    job_location;
-    /**
-     * @member {Vacancy.StateEnum} state
-     * @type {Vacancy.StateEnum}
-     */
-    state;
-    /**
-     * @member {String} job_title
-     * @type {String}
-     */
-    job_title;
-    /**
-     * @member {String} apply_url
-     * @type {String}
-     */
-    apply_url;
-    /**
-     * @member {String} company
-     * @type {String}
-     */
-    company;
-
-    
-
-    /**
      * Constructs a new <code>Vacancy</code>.
      * @alias module:model/Vacancy
-     * @param transactions {Array.<CodegenProperty{openApiType='LiteTransaction', baseName='transactions', complexType='LiteTransaction', getter='getTransactions', setter='setTransactions', description='null', dataType='LiteTransaction', datatypeWithEnum='LiteTransaction', dataFormat='null', name='transactions', min='null', max='null', defaultValue='null', defaultValueWithParam=' = LiteTransaction.constructFromObject(data['transactions']);', baseType='LiteTransaction', containerType='null', title='null', unescapedDescription='null', maxLength=null, minLength=null, pattern='null', example='null', jsonSchema='{
-  "$ref" : "#/components/schemas/LiteTransaction"
-}', minimum='null', maximum='null', exclusiveMinimum=false, exclusiveMaximum=false, required=false, deprecated=false, hasMoreNonReadOnly=false, isPrimitiveType=false, isModel=true, isContainer=false, isString=false, isNumeric=false, isInteger=false, isShort=false, isLong=false, isUnboundedInteger=false, isNumber=false, isFloat=false, isDouble=false, isDecimal=false, isByteArray=false, isBinary=false, isFile=false, isBoolean=false, isDate=false, isDateTime=false, isUuid=false, isUri=false, isEmail=false, isFreeFormObject=false, isArray=false, isMap=false, isEnum=false, isAnyType=false, isReadOnly=false, isWriteOnly=false, isNullable=false, isSelfReference=false, isCircularReference=false, isDiscriminator=false, _enum=null, allowableValues=null, items=null, additionalProperties=null, vars=[], requiredVars=[], mostInnerItems=null, vendorExtensions={}, hasValidation=false, isInherited=false, discriminatorValue='null', nameInCamelCase='Transactions', nameInSnakeCase='TRANSACTIONS', enumName='null', maxItems=null, minItems=null, maxProperties=null, minProperties=null, uniqueItems=false, multipleOf=null, isXmlAttribute=false, xmlPrefix='null', xmlName='null', xmlNamespace='null', isXmlWrapped=false, isNull=false, getAdditionalPropertiesIsAnyType=false, getHasVars=false, getHasRequired=false, getHasDiscriminatorWithNonEmptyMapping=false, composedSchemas=null, hasMultipleTypes=false}>} 
+     * @param transactions {Array.<module:model/LiteTransaction>} 
      * @param reqNumber {String} 
      * @param companyName {String} 
      * @param jobLocation {String} 
@@ -146,7 +92,57 @@ class Vacancy {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} id
+ */
+Vacancy.prototype['id'] = undefined;
+
+/**
+ * @member {Array.<module:model/LiteTransaction>} transactions
+ */
+Vacancy.prototype['transactions'] = undefined;
+
+/**
+ * @member {String} req_number
+ */
+Vacancy.prototype['req_number'] = undefined;
+
+/**
+ * @member {String} company_name
+ */
+Vacancy.prototype['company_name'] = undefined;
+
+/**
+ * @member {String} job_location
+ */
+Vacancy.prototype['job_location'] = undefined;
+
+/**
+ * @member {module:model/Vacancy.StateEnum} state
+ */
+Vacancy.prototype['state'] = undefined;
+
+/**
+ * @member {String} job_title
+ */
+Vacancy.prototype['job_title'] = undefined;
+
+/**
+ * @member {String} apply_url
+ */
+Vacancy.prototype['apply_url'] = undefined;
+
+/**
+ * @member {String} company
+ */
+Vacancy.prototype['company'] = undefined;
+
+
+
 
 
 /**

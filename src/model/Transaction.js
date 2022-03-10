@@ -20,104 +20,6 @@ import ApiClient from '../ApiClient';
  */
 class Transaction {
     /**
-     * @member {String} apply_url
-     * @type {String}
-     */
-    apply_url;
-    /**
-     * @member {String} ats_company_id
-     * @type {String}
-     */
-    ats_company_id;
-    /**
-     * @member {String} ats_id
-     * @type {String}
-     */
-    ats_id;
-    /**
-     * @member {String} channel
-     * @type {String}
-     */
-    channel;
-    /**
-     * @member {String} company_name
-     * @type {String}
-     */
-    company_name;
-    /**
-     * @member {String} confirmation_id
-     * @type {String}
-     */
-    confirmation_id;
-    /**
-     * @member {Transaction.DistributionTypeEnum} distribution_type
-     * @type {Transaction.DistributionTypeEnum}
-     */
-    distribution_type;
-    /**
-     * @member {String} error
-     * @type {String}
-     */
-    error;
-    /**
-     * @member {String} job_location
-     * @type {String}
-     */
-    job_location;
-    /**
-     * @member {String} job_title
-     * @type {String}
-     */
-    job_title;
-    /**
-     * @member {String} outreach_centre_email_address
-     * @type {String}
-     */
-    outreach_centre_email_address;
-    /**
-     * @member {Date} posting_timestamp
-     * @type {Date}
-     */
-    posting_timestamp;
-    /**
-     * @member {String} publication_url
-     * @type {String}
-     */
-    publication_url;
-    /**
-     * @member {String} req_number
-     * @type {String}
-     */
-    req_number;
-    /**
-     * @member {Transaction.StateEnum} state
-     * @type {Transaction.StateEnum}
-     */
-    state;
-    /**
-     * @member {String} transaction_id
-     * @type {String}
-     */
-    transaction_id;
-    /**
-     * @member {Transaction.TransactionMethodEnum} transaction_method
-     * @type {Transaction.TransactionMethodEnum}
-     */
-    transaction_method;
-    /**
-     * @member {Date} transaction_timestamp
-     * @type {Date}
-     */
-    transaction_timestamp;
-    /**
-     * @member {Transaction.TransactionTypeEnum} transaction_type
-     * @type {Transaction.TransactionTypeEnum}
-     */
-    transaction_type;
-
-    
-
-    /**
      * Constructs a new <code>Transaction</code>.
      * @alias module:model/Transaction
      * @param atsCompanyId {String} 
@@ -211,7 +113,107 @@ class Transaction {
         }
         return obj;
     }
+
+
 }
+
+/**
+ * @member {String} apply_url
+ */
+Transaction.prototype['apply_url'] = undefined;
+
+/**
+ * @member {String} ats_company_id
+ */
+Transaction.prototype['ats_company_id'] = undefined;
+
+/**
+ * @member {String} ats_id
+ */
+Transaction.prototype['ats_id'] = undefined;
+
+/**
+ * @member {String} channel
+ */
+Transaction.prototype['channel'] = undefined;
+
+/**
+ * @member {String} company_name
+ */
+Transaction.prototype['company_name'] = undefined;
+
+/**
+ * @member {String} confirmation_id
+ */
+Transaction.prototype['confirmation_id'] = undefined;
+
+/**
+ * @member {module:model/Transaction.DistributionTypeEnum} distribution_type
+ */
+Transaction.prototype['distribution_type'] = undefined;
+
+/**
+ * @member {String} error
+ */
+Transaction.prototype['error'] = undefined;
+
+/**
+ * @member {String} job_location
+ */
+Transaction.prototype['job_location'] = undefined;
+
+/**
+ * @member {String} job_title
+ */
+Transaction.prototype['job_title'] = undefined;
+
+/**
+ * @member {String} outreach_centre_email_address
+ */
+Transaction.prototype['outreach_centre_email_address'] = undefined;
+
+/**
+ * @member {Date} posting_timestamp
+ */
+Transaction.prototype['posting_timestamp'] = undefined;
+
+/**
+ * @member {String} publication_url
+ */
+Transaction.prototype['publication_url'] = undefined;
+
+/**
+ * @member {String} req_number
+ */
+Transaction.prototype['req_number'] = undefined;
+
+/**
+ * @member {module:model/Transaction.StateEnum} state
+ */
+Transaction.prototype['state'] = undefined;
+
+/**
+ * @member {String} transaction_id
+ */
+Transaction.prototype['transaction_id'] = undefined;
+
+/**
+ * @member {module:model/Transaction.TransactionMethodEnum} transaction_method
+ */
+Transaction.prototype['transaction_method'] = undefined;
+
+/**
+ * @member {Date} transaction_timestamp
+ */
+Transaction.prototype['transaction_timestamp'] = undefined;
+
+/**
+ * @member {module:model/Transaction.TransactionTypeEnum} transaction_type
+ */
+Transaction.prototype['transaction_type'] = undefined;
+
+
+
 
 
 /**

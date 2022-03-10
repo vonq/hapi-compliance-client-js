@@ -12,7 +12,6 @@
  */
 
 
-
 import ApiClient from "../ApiClient";
 import BoardPublic from '../model/BoardPublic';
 
@@ -21,27 +20,37 @@ import BoardPublic from '../model/BoardPublic';
 * @module api/JobboardbystateApi
 * @version v1
 */
-export default class JobboardbystateApi extends ApiClient {
+export default class JobboardbystateApi {
 
     /**
     * Constructs a new JobboardbystateApi. 
     * @alias module:api/JobboardbystateApi
     * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    constructor() {
-      super();
-      this.baseURL = null;
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the listJobBoardByStateCode operation.
+     * @callback module:api/JobboardbystateApi~listJobBoardByStateCodeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BoardPublic} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
      * List job board by state code, including credentials schema
      *  This endpoint lists the job board used for a given state including the schema for the required credentials. This endpoint is to be used to render the  jobboard credentials onboarding form 
      * @param {String} stateCode 
-     * @param {String} stateCode2 
-     * @return {Promise<BoardPublic>}
+     * @param {module:model/String} stateCode2 
+     * @param {module:api/JobboardbystateApi~listJobBoardByStateCodeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BoardPublic}
      */
-    async listJobBoardByStateCode(stateCode, stateCode2) {
+    listJobBoardByStateCode(stateCode, stateCode2, callback) {
       let postBody = null;
       // verify the required parameter 'stateCode' is set
       if (stateCode === undefined || stateCode === null) {
@@ -59,7 +68,6 @@ export default class JobboardbystateApi extends ApiClient {
         'state_code': stateCode2
       };
       let headerParams = {
-        'User-Agent': 'OpenAPI-Generator/v1/Javascript',
       };
       let formParams = {
       };
@@ -68,11 +76,10 @@ export default class JobboardbystateApi extends ApiClient {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = BoardPublic;
-
-      return this.callApi(
+      return this.apiClient.callApi(
         '/jobboards/{state_code}/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
