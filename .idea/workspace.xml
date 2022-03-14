@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c10832e-d7ae-4138-8bbe-fe4ad9470be9" name="Default Changelist" comment="Remove 'v'">
+    <list default="true" id="8c10832e-d7ae-4138-8bbe-fe4ad9470be9" name="Default Changelist" comment="Bump version">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator-ignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator/FILES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ATS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BoardContract.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BoardPublic.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CompaniesApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Company.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CompanySubsidiary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GetEnvelopeStatusApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/JobboardbystateApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/LiteTransaction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PointOfContact.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Tier.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TiersApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Transaction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TransactionsApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/VacanciesApi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Vacancy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_push.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mocha.opts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApiClient.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/CompaniesApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/GetEnvelopeStatusApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/JobboardbystateApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TiersApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TransactionsApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/VacanciesApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ATS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/BoardContract.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/BoardPublic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Company.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CompanySubsidiary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LiteTransaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PointOfContact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Tier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Transaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Vacancy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/CompaniesApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/GetEnvelopeStatusApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/JobboardbystateApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/TiersApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/TransactionsApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api/VacanciesApi.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/ATS.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/BoardContract.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/BoardPublic.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/Company.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/CompanySubsidiary.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/LiteTransaction.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/PointOfContact.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/Tier.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/Transaction.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model/Vacancy.spec.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,6 +108,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,7 +121,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646934087111</updated>
-      <workItem from="1646934088137" duration="1180000" />
+      <workItem from="1646934088137" duration="4327000" />
+      <workItem from="1647167526033" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="Add missing v">
       <created>1646934551957</created>
@@ -50,18 +138,59 @@
       <option name="project" value="LOCAL" />
       <updated>1646934930299</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove importing set">
+      <created>1646940890673</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646940890673</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Use plain js openapi generator">
+      <created>1646942341856</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646942341856</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Bump version">
+      <created>1646944671207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646944671207</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add missing v" />
     <MESSAGE value="Remove 'v'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove 'v'" />
+    <MESSAGE value="Remove importing set" />
+    <MESSAGE value="Use plain js openapi generator" />
+    <MESSAGE value="Bump version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bump version" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="100" y="125" width="2360" height="1129" key="DiffContextDialog" timestamp="1646944620216">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="100" y="125" width="2360" height="1129" key="DiffContextDialog/0.25.1680.949@0.25.1680.949" timestamp="1646944620216" />
+    <state x="100" y="125" width="2360" height="1129" key="DiffContextDialog/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646942333101" />
     <state x="1156" y="590" width="732" height="261" key="Github.ShareDialog" timestamp="1646934265348">
       <screen x="0" y="25" width="2560" height="1329" />
     </state>
@@ -70,10 +199,11 @@
       <screen x="0" y="25" width="2560" height="1329" />
     </state>
     <state x="1088" y="398" key="Github.UntrackedFilesDialog/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646934301424" />
-    <state x="880" y="426" key="Vcs.Push.Dialog.v2" timestamp="1646934982457">
-      <screen x="0" y="25" width="2560" height="1329" />
+    <state x="578" y="311" key="Vcs.Push.Dialog.v2" timestamp="1646944674049">
+      <screen x="0" y="25" width="1680" height="949" />
     </state>
-    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646934982457" />
+    <state x="578" y="311" key="Vcs.Push.Dialog.v2/0.25.1680.949@0.25.1680.949" timestamp="1646944674049" />
+    <state x="880" y="426" key="Vcs.Push.Dialog.v2/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646942346063" />
     <state x="979" y="322" width="602" height="735" key="find.popup" timestamp="1646934980717">
       <screen x="0" y="25" width="2560" height="1329" />
     </state>
@@ -82,5 +212,10 @@
       <screen x="0" y="25" width="2560" height="1329" />
     </state>
     <state x="1007" y="582" key="git4idea.remote.GitConfigureRemotesDialog/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646934412378" />
+    <state x="1010" y="241" width="670" height="483" key="search.everywhere.popup" timestamp="1646944618145">
+      <screen x="0" y="25" width="1680" height="949" />
+    </state>
+    <state x="1010" y="241" width="670" height="483" key="search.everywhere.popup/0.25.1680.949@0.25.1680.949" timestamp="1646944618145" />
+    <state x="1585" y="328" width="670" height="676" key="search.everywhere.popup/0.25.2560.1329/-1680.849.1680.1025@0.25.2560.1329" timestamp="1646941601913" />
   </component>
 </project>
