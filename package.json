@@ -1,5 +1,5 @@
 {
-  "name": "hapi-compliance-client",
+  "name": "hapi-compliance-client-js",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
