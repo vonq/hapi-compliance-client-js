@@ -245,6 +245,12 @@ export interface Company {
      * @type {string}
      * @memberof Company
      */
+    'city'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
     'compliance_admin_point_of_contact'?: string | null;
     /**
      * 
@@ -329,6 +335,12 @@ export interface Company {
      * @type {string}
      * @memberof Company
      */
+    'state'?: CompanyStateEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof Company
+     */
     'status'?: CompanyStatusEnum;
     /**
      * 
@@ -344,6 +356,69 @@ export interface Company {
     'uiid'?: string | null;
 }
 
+export const CompanyStateEnum = {
+    Al: 'AL',
+    Ak: 'AK',
+    As: 'AS',
+    Az: 'AZ',
+    Ar: 'AR',
+    Aa: 'AA',
+    Ae: 'AE',
+    Ap: 'AP',
+    Ca: 'CA',
+    Co: 'CO',
+    Ct: 'CT',
+    De: 'DE',
+    Dc: 'DC',
+    Fl: 'FL',
+    Ga: 'GA',
+    Gu: 'GU',
+    Hi: 'HI',
+    Id: 'ID',
+    Il: 'IL',
+    In: 'IN',
+    Ia: 'IA',
+    Ks: 'KS',
+    Ky: 'KY',
+    La: 'LA',
+    Me: 'ME',
+    Md: 'MD',
+    Ma: 'MA',
+    Mi: 'MI',
+    Mn: 'MN',
+    Ms: 'MS',
+    Mo: 'MO',
+    Mt: 'MT',
+    Ne: 'NE',
+    Nv: 'NV',
+    Nh: 'NH',
+    Nj: 'NJ',
+    Nm: 'NM',
+    Ny: 'NY',
+    Nc: 'NC',
+    Nd: 'ND',
+    Mp: 'MP',
+    Oh: 'OH',
+    Ok: 'OK',
+    Or: 'OR',
+    Pa: 'PA',
+    Pr: 'PR',
+    Ri: 'RI',
+    Sc: 'SC',
+    Sd: 'SD',
+    Tn: 'TN',
+    Tx: 'TX',
+    Ut: 'UT',
+    Vt: 'VT',
+    Vi: 'VI',
+    Va: 'VA',
+    Wa: 'WA',
+    Wv: 'WV',
+    Wi: 'WI',
+    Wy: 'WY'
+} as const;
+
+export type CompanyStateEnum = typeof CompanyStateEnum[keyof typeof CompanyStateEnum];
 export const CompanyStatusEnum = {
     InReview: 'in_review',
     Active: 'active',
@@ -406,6 +481,18 @@ export interface CompanySubsidiary {
      * @memberof CompanySubsidiary
      */
     'street_address'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanySubsidiary
+     */
+    'state'?: CompanySubsidiaryStateEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof CompanySubsidiary
+     */
+    'city'?: string | null;
     /**
      * 
      * @type {string}
@@ -474,6 +561,69 @@ export interface CompanySubsidiary {
     'company'?: string | null;
 }
 
+export const CompanySubsidiaryStateEnum = {
+    Al: 'AL',
+    Ak: 'AK',
+    As: 'AS',
+    Az: 'AZ',
+    Ar: 'AR',
+    Aa: 'AA',
+    Ae: 'AE',
+    Ap: 'AP',
+    Ca: 'CA',
+    Co: 'CO',
+    Ct: 'CT',
+    De: 'DE',
+    Dc: 'DC',
+    Fl: 'FL',
+    Ga: 'GA',
+    Gu: 'GU',
+    Hi: 'HI',
+    Id: 'ID',
+    Il: 'IL',
+    In: 'IN',
+    Ia: 'IA',
+    Ks: 'KS',
+    Ky: 'KY',
+    La: 'LA',
+    Me: 'ME',
+    Md: 'MD',
+    Ma: 'MA',
+    Mi: 'MI',
+    Mn: 'MN',
+    Ms: 'MS',
+    Mo: 'MO',
+    Mt: 'MT',
+    Ne: 'NE',
+    Nv: 'NV',
+    Nh: 'NH',
+    Nj: 'NJ',
+    Nm: 'NM',
+    Ny: 'NY',
+    Nc: 'NC',
+    Nd: 'ND',
+    Mp: 'MP',
+    Oh: 'OH',
+    Ok: 'OK',
+    Or: 'OR',
+    Pa: 'PA',
+    Pr: 'PR',
+    Ri: 'RI',
+    Sc: 'SC',
+    Sd: 'SD',
+    Tn: 'TN',
+    Tx: 'TX',
+    Ut: 'UT',
+    Vt: 'VT',
+    Vi: 'VI',
+    Va: 'VA',
+    Wa: 'WA',
+    Wv: 'WV',
+    Wi: 'WI',
+    Wy: 'WY'
+} as const;
+
+export type CompanySubsidiaryStateEnum = typeof CompanySubsidiaryStateEnum[keyof typeof CompanySubsidiaryStateEnum];
 export const CompanySubsidiaryStatusEnum = {
     InReview: 'in_review',
     Active: 'active',
@@ -482,6 +632,37 @@ export const CompanySubsidiaryStatusEnum = {
 
 export type CompanySubsidiaryStatusEnum = typeof CompanySubsidiaryStatusEnum[keyof typeof CompanySubsidiaryStatusEnum];
 
+/**
+ * 
+ * @export
+ * @interface InlineResponse200
+ */
+export interface InlineResponse200 {
+    /**
+     * 
+     * @type {number}
+     * @memberof InlineResponse200
+     */
+    'count': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof InlineResponse200
+     */
+    'next'?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof InlineResponse200
+     */
+    'previous'?: string | null;
+    /**
+     * 
+     * @type {Array<Vacancy>}
+     * @memberof InlineResponse200
+     */
+    'results': Array<Vacancy>;
+}
 /**
  * 
  * @export
@@ -875,6 +1056,12 @@ export interface Vacancy {
      * @memberof Vacancy
      */
     'transactions': Array<LiteTransaction>;
+    /**
+     * 
+     * @type {string}
+     * @memberof Vacancy
+     */
+    'compliance_met'?: string;
     /**
      * 
      * @type {string}
@@ -3431,10 +3618,13 @@ export const VacanciesApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @param {string} companyId 
+         * @param {string} [search] A search term.
+         * @param {number} [limit] Number of results to return per page.
+         * @param {number} [offset] The initial index from which to return the results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        vacanciesList: async (companyId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        vacanciesList: async (companyId: string, search?: string, limit?: number, offset?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'companyId' is not null or undefined
             assertParamExists('vacanciesList', 'companyId', companyId)
             const localVarPath = `/vacancies/{company_id}/`
@@ -3453,6 +3643,18 @@ export const VacanciesApiAxiosParamCreator = function (configuration?: Configura
             // authentication Basic required
             // http basic authentication required
             setBasicAuthToObject(localVarRequestOptions, configuration)
+
+            if (search !== undefined) {
+                localVarQueryParameter['search'] = search;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
 
 
     
@@ -3519,11 +3721,14 @@ export const VacanciesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @param {string} companyId 
+         * @param {string} [search] A search term.
+         * @param {number} [limit] Number of results to return per page.
+         * @param {number} [offset] The initial index from which to return the results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async vacanciesList(companyId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Vacancy>>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.vacanciesList(companyId, options);
+        async vacanciesList(companyId: string, search?: string, limit?: number, offset?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse200>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.vacanciesList(companyId, search, limit, offset, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -3550,11 +3755,14 @@ export const VacanciesApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @param {string} companyId 
+         * @param {string} [search] A search term.
+         * @param {number} [limit] Number of results to return per page.
+         * @param {number} [offset] The initial index from which to return the results.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        vacanciesList(companyId: string, options?: any): AxiosPromise<Array<Vacancy>> {
-            return localVarFp.vacanciesList(companyId, options).then((request) => request(axios, basePath));
+        vacanciesList(companyId: string, search?: string, limit?: number, offset?: number, options?: any): AxiosPromise<InlineResponse200> {
+            return localVarFp.vacanciesList(companyId, search, limit, offset, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -3579,12 +3787,15 @@ export class VacanciesApi extends BaseAPI {
     /**
      * 
      * @param {string} companyId 
+     * @param {string} [search] A search term.
+     * @param {number} [limit] Number of results to return per page.
+     * @param {number} [offset] The initial index from which to return the results.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof VacanciesApi
      */
-    public vacanciesList(companyId: string, options?: AxiosRequestConfig) {
-        return VacanciesApiFp(this.configuration).vacanciesList(companyId, options).then((request) => request(this.axios, this.basePath));
+    public vacanciesList(companyId: string, search?: string, limit?: number, offset?: number, options?: AxiosRequestConfig) {
+        return VacanciesApiFp(this.configuration).vacanciesList(companyId, search, limit, offset, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
